@@ -13,17 +13,17 @@ import java.util.List;
 @Dao
 public interface NoteDao {
     @Insert
-    void insertNote(Note note);
+    void insert(Note note);
 
     @Query("SELECT * FROM note")
     List<Note> getAllNotes();
 
     @Update
-    void updateNote(Note note);
+    void update(Note note);
 
     @Delete
-    void deleteNote(Note note);
+    void delete(Note note);
 
     @Delete
-    void deleteNotes(Note... notes);
+    void deleteAll(Note... notes);
 }
