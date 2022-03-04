@@ -1,12 +1,21 @@
 package com.mfundoza.mynotes.models;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.time.LocalDate;
 
+@Entity
 public class Note {
+    @PrimaryKey(autoGenerate = true)
     private int id;
+
     private String title;
     private String description;
     private Priority priority;
+
+    @ColumnInfo(name = "date_created")
     private LocalDate dateCreated;
 
     public Note() {}
