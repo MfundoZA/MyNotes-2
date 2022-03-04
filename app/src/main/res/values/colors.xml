@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- <color name="colorPrimaryVariant">#FFBB86FC</color> -->
+    <color name="colorPrimary">#FFFFFFFF</color>
+    <color name="colorPrimaryDark">#FFFFFFFF</color>
+    <color name="colorSecondary">#00E676</color>
+    <color name="colorSecondaryDark">#00B248</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Colors for dark theme -->
+    <color name="dtColorPrimary">#212121</color>
+    <color name="dtColorPrimaryDark">#000000</color>
+</resources>
