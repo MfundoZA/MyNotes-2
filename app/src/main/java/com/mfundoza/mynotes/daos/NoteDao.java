@@ -1,5 +1,6 @@
 package com.mfundoza.mynotes.daos;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -16,7 +17,7 @@ public interface NoteDao {
     void insert(Note note);
 
     @Query("SELECT * FROM note")
-    List<Note> getAllNotes();
+    LiveData<List<Note>> getAllNotes();
 
     @Update
     void update(Note note);
