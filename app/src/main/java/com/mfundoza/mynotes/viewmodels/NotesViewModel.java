@@ -12,11 +12,11 @@ import com.mfundoza.mynotes.repositories.NoteRepository;
 
 import java.util.List;
 
-public class MainViewModel extends AndroidViewModel {
+public class NotesViewModel extends AndroidViewModel {
     private NoteRepository noteRepository;
     private LiveData<List<Note>> savedNotes;
 
-    public MainViewModel(@NonNull Application application) {
+    public NotesViewModel(@NonNull Application application) {
         super(application);
 
         noteRepository = new NoteRepository(application);
@@ -37,5 +37,9 @@ public class MainViewModel extends AndroidViewModel {
 
     public void deleteAllNotes() {
         noteRepository.deleteAllNotes();
+    }
+
+    public LiveData<List<Note>> getSavedNotes() {
+        return savedNotes;
     }
 }
