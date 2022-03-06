@@ -8,7 +8,6 @@
     <fragment
         android:id="@+id/NotesFragment"
         android:name="com.mfundoza.mynotes.views.NotesFragment"
-        android:label="@string/notes_fragment_label"
         tools:layout="@layout/fragment_notes">
 
         <action
@@ -18,7 +17,6 @@
     <fragment
         android:id="@+id/NoteDetailFragment"
         android:name="com.mfundoza.mynotes.views.NoteDetailFragment"
-        android:label="@string/note_detail_fragment_label"
         tools:layout="@layout/fragment_note_detail">
 
         <action
