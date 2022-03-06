@@ -15,8 +15,8 @@ public class Note {
     private String description;
     private Priority priority;
 
-    @ColumnInfo(name = "date_created")
-    private LocalDate dateCreated;
+    /*@ColumnInfo(name = "date_created")
+    private LocalDate dateCreated;*/
 
     public Note() {}
 
@@ -58,11 +58,11 @@ public class Note {
         this.priority = priority;
     }
 
-    public LocalDate getDateCreated() {
+    /*public LocalDate getDateCreated() {
         return dateCreated;
     }
 
     public void setDateCreated(LocalDate dateCreated) {
         this.dateCreated = dateCreated;
-    }
+    }*/
 }
