@@ -10,11 +10,11 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.mfundoza.mynotes.R;
-import com.mfundoza.mynotes.databinding.FragmentFirstBinding;
+import com.mfundoza.mynotes.databinding.FragmentNotesBinding;
 
-public class FirstFragment extends Fragment {
+public class NotesFragment extends Fragment {
 
-    private FragmentFirstBinding binding;
+    private FragmentNotesBinding binding;
 
     @Override
     public View onCreateView(
@@ -22,7 +22,7 @@ public class FirstFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentFirstBinding.inflate(inflater, container, false);
+        binding = FragmentNotesBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -33,8 +33,8 @@ public class FirstFragment extends Fragment {
         binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                NavHostFragment.findNavController(NotesFragment.this)
+                        .navigate(R.id.action_NotesFragment_to_NoteDetailFragment);
             }
         });
     }
