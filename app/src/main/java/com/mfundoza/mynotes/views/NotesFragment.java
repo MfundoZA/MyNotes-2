@@ -29,10 +29,11 @@ public class NotesFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
+        binding = FragmentNotesBinding.inflate(inflater, container, false);
+
         notesAdapter = new NotesAdapter();
         binding.rcyNotes.setAdapter(notesAdapter);
 
-        binding = FragmentNotesBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
 
