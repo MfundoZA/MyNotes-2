@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.mfundoza.mynotes.R;
+import com.mfundoza.mynotes.adapters.NotesAdapter;
 import com.mfundoza.mynotes.databinding.FragmentNotesBinding;
 import com.mfundoza.mynotes.models.Note;
 import com.mfundoza.mynotes.viewmodels.NotesViewModel;
@@ -19,7 +20,7 @@ import com.mfundoza.mynotes.viewmodels.NotesViewModel;
 import java.util.List;
 
 public class NotesFragment extends Fragment {
-
+    private NotesAdapter notesAdapter;
     private FragmentNotesBinding binding;
 
     @Override
@@ -28,8 +29,12 @@ public class NotesFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
+        notesAdapter = new NotesAdapter();
+        binding.rcyNotes.setAdapter(notesAdapter);
+
         binding = FragmentNotesBinding.inflate(inflater, container, false);
         return binding.getRoot();
+
 
     }
 
@@ -38,16 +43,12 @@ public class NotesFragment extends Fragment {
 
         NotesViewModel notesViewModel = new ViewModelProvider(requireActivity()).get(NotesViewModel.class);
         notesViewModel.getSavedNotes().observe(getViewLifecycleOwner(), new Observer<List<Note>>() {
-            // Todo create adapter class and assign the notes in notes in adapter here
-        });
-
-        binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(NotesFragment.this)
-                        .navigate(R.id.action_NotesFragment_to_NoteDetailFragment);
+            public void onChanged(List<Note> notes) {
+                notesAdapter.setSavedNotes(notes);
             }
         });
+
     }
 
     @Override
