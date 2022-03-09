@@ -12,7 +12,7 @@ import com.mfundoza.mynotes.models.Note;
 import java.util.List;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHolder> {
-    private List<Note> savedNotes;
+    private List<Note> savedNotes = new List<>();
 
     public void setSavedNotes(List<Note> savedNotes) {
         this.savedNotes = savedNotes;
@@ -22,19 +22,23 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
     @NonNull
     @Override
     public NotesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View itemView = LayoutInflator.from(parent.getContext())
+        .inflate(R.layout.note_item, parent, false);
+
+        return new NotesViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull NotesViewHolder holder, int position) {
-
+        // Todo implement method
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return savedNotes.size();
     }
 
+    // Todo finish NotesViewHolder
     class NotesViewHolder extends RecyclerView.ViewHolder {
 
         public NotesViewHolder(@NonNull View itemView) {
